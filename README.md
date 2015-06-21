@@ -30,7 +30,8 @@ Give it executable permissions. Use the content of hooks/post-revieve from the f
 - Now any one having access to this server can push code to it by creating a remote in their local repo.
 Adding git remote for pushing code to server. 
 git remote add myServer user@<server's ip>:<path to this folder>/project/myCode.git.
-git remote add myServer root@10.10.1.1:/var/www/project/myCode.git.
+
+> git remote add myServer root@10.10.1.1:/var/www/project/myCode.git.
 
 Pushing code to server.
 > git push myServer master;
