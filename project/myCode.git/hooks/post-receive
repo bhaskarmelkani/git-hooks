@@ -1,0 +1,22 @@
+#!/bin/sh
+read oldrev newrev ref
+branch=`echo $ref | cut -d/ -f3`
+echo 'Fetching Branch: '$branch
+#Assuming code is placed at /var/www/project/myCode
+GIT_WORK_TREE=/var/www/project/myCode git checkout -f $branch
+cd /var/www/project/myCode;
+# Do post deployment tasks like installing dependencies, running build scripts, creating backup. Restarting servers.
+
+# Running Npm install
+echo 'Running NPM install';
+npm install;
+
+#Running grunt taska
+echo 'Running grunt task.'
+grunt build;
+
+echo 'Reloading Server...'
+sudo forever restart server.js;
+
+echo 'Done !'
+
