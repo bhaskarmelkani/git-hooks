@@ -33,5 +33,5 @@ git remote add myServer user@<server's ip>:<path to this folder>/project/myCode.
 git remote add myServer root@10.10.1.1:/var/www/project/myCode.git.
 
 Pushing code to server.
-git push myServer master;
+> git push myServer master;
 
